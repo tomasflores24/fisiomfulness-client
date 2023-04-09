@@ -1,2 +1,38 @@
+@use "../util/" as u;
+
 .home {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 64px;
+
+    .container {
+        margin: 3rem auto;
+    }
+
+    h1 {
+        color: white;
+        margin: auto;
+        max-width: 100%;
+        font-size: 36px;
+        line-height: 39px;
+        letter-spacing: -.04em;
+        font-weight: bold;
+    }
+
+    p {
+        margin-top: 14px;
+        font-size: 24px;
+        line-height: 34px;
+        color: #888;
+        letter-spacing: -.03em;
+    }
+
+    @include u.breakpoint-up(large) {
+        h1 {
+            max-width: 800px;
+            font-size: 64px;
+            line-height: 74px;
+        }
+    }
 }

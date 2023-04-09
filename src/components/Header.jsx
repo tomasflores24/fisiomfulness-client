@@ -1,25 +1,45 @@
-import React, { useState } from "react";
-import { Link, NavLink } from 'react-router-dom';
-import { BiHomeAlt2, BiUser, BiBriefcaseAlt, BiCog, BiGridAlt } from 'react-icons/bi';
+import React, { useState, useEffect } from "react"
+import { Link, NavLink } from "react-router-dom"
+import { links } from "../data/dummy"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [ sticky, setSticky ] = useState(false);
 
+  const handleClick = () => {
+    setIsOpen(false);
+    document.body.classList.remove("header-navbar");
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
   const handleToggle = () => {
     setIsOpen(!isOpen);
-
-    if (!isOpen) {
-      document.body.classList.add("header-navbar");
-    } else {
-      document.body.classList.remove("header-navbar");
-    }
+    document.body.classList.toggle("header-navbar", !isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+        setSticky(window.scrollY > 0);
+    }
+
+    if (window.scrollY > 0) {
+        setSticky(true);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
   return (
-    <header className="header">
+    <header className={`${sticky ? "header scroll-header" : "header"}`}>
       <div className="container">
         <nav>
-          <Link to="/" className='logo'>
+          <Link 
+            to="/" 
+            className='logo' 
+            onClick={handleClick}
+          >
             <img src="/icon-logo.png" alt="LOGO DE FISIONFULNESS" />
           </Link>
           
@@ -27,59 +47,21 @@ const Header = () => {
             <ul>
               <div className="text-zinc-500 font-bold text-xs uppercase mt-[16px] mb-[12px] hide-for-desktop">Menú</div>
 
-              <NavLink 
-                to="/"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                <div className="icon hide-for-desktop">
-                  <BiHomeAlt2 />
-                </div>
-                Inicio
-              </NavLink>
-
-              <NavLink 
-                to="/quienes-somos"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                <div className="icon hide-for-desktop">
-                  <BiUser />
-                </div>
-                Quiénes Somos
-              </NavLink>
-            
-              <NavLink 
-                to="/servicios"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                <div className="icon hide-for-desktop">
-                  <BiCog />
-                </div>
-                Servicios
-              </NavLink>
-            
-              <NavLink 
-                to="/trabaja-con-nosotros"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                <div className="icon hide-for-desktop">
-                  <BiBriefcaseAlt />
-                </div>
-                Trabaja con Nosotros
-              </NavLink>
-            
-              <NavLink 
-                to="/blog"
-                className={({ isActive }) => (isActive ? "active" : "")}
-              >
-                <div className="icon hide-for-desktop">
-                  <BiGridAlt />
-                </div>
-                Blog
-              </NavLink>
+              {links.map((link) => (
+                <NavLink 
+                  key={link.to}
+                  to={link.to}
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={handleClick}
+                >
+                  <div className="icon hide-for-desktop">
+                    {link.icon}
+                  </div>
+                  {link.text}
+                </NavLink>
+              ))}
             </ul>
           </div>
-
-          {/* ham-burger */}
 
           <button className={`ham-burger hide-for-desktop ${isOpen ? 'open' : ''}`} onClick={handleToggle}>
             <span></span>

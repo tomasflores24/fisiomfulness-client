@@ -4,7 +4,8 @@ const HomeContainer = () => {
   return (
     <section className="home">
       <div className="container">
-        <h1 className="text-white">Antony :3</h1>
+        <h1>Fisiomfulness</h1>
+        <p>Cuidamos tu cuerpo y sanamos tu mente</p>
       </div>
     </section>
   )

@@ -23,6 +23,7 @@ body {
     display: flex;
     flex-direction: column;
     background-image:url("/images/fondo1.jpeg");
+    // background-color: #000;
     background-repeat: no-repeat;   
     background-size: cover;
     // background: no-repeat center/cover;
@@ -33,7 +34,6 @@ body {
         position: inherit;
         display: inherit;
         flex-direction: inherit;
-        overflow-x: inherit;
         min-height: inherit;
     }
 }
