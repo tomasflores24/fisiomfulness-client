@@ -1,3 +1,5 @@
+@use "../util" as u;
+
 html {
     box-sizing: border-box;
     font-size: 100%;
@@ -17,14 +19,23 @@ html {
 }
 
 body {
-    background-image:url("/images/fondo1.jpeg");
     position: relative;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
-    min-height:100vh;
+    background-image:url("/images/fondo1.jpeg");
     background-repeat: no-repeat;   
     background-size: cover;
+    // background: no-repeat center/cover;
+    overflow-x: hidden;
+    min-height: 100vh;
+
+    #root {
+        position: inherit;
+        display: inherit;
+        flex-direction: inherit;
+        overflow-x: inherit;
+        min-height: inherit;
+    }
 }
 
 img {
@@ -36,6 +47,19 @@ li {
     list-style: none;
 }
 
+// Visibility
+.hide-for-mobile {
+    @include u.breakpoint-down(medium) {
+        display: none !important;
+    }
+}
+  
+.hide-for-desktop {
+    @include u.breakpoint-up(large) {
+        display: none !important;
+    }
+}
+
 .container {
     position: relative;
     width: 100%;
@@ -43,4 +67,9 @@ li {
     margin: 0 auto;
     padding: 0 24px;
     max-width: 1200px !important;
+    z-index: 10;
+  
+    @include u.breakpoint-up(large) {
+      padding: 0 40px !important;
+    }
 }
