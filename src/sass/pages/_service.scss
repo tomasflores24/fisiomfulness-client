@@ -1,0 +1,9 @@
+@use "../util/" as u;
+
+.service {
+    padding: 2em 0 48px;
+
+    @include u.breakpoint-up(large) {
+        padding-top: 4em;
+    }
+}

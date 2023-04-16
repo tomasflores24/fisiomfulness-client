@@ -1,4 +1,4 @@
-import { BiHomeAlt2, BiUser, BiBriefcaseAlt, BiCog, BiGridAlt } from 'react-icons/bi';
+import { BiHomeAlt2, BiUser, BiBriefcaseAlt, BiCog, BiGridAlt } from 'react-icons/bi'
 
 export const links = [
     {
@@ -24,6 +24,27 @@ export const links = [
     {
         to: '/blog',
         text: 'Blog',
-        icon: <BiGridAlt />,
+        icon: <BiGridAlt />
     },
-];
+]
+
+export const services = [
+    {
+        id: 1,
+        to: "salud-mental",
+        imageName: "service-1.jpg",
+        title: "Salud Mental"
+    },
+    {
+        id: 2,
+        to: "salud-fisica",
+        imageName: "service-2.jpg",
+        title: "Salud Física"
+    },
+    {
+        id: 3,
+        to: "salud-nutricional",
+        imageName: "service-3.jpg",
+        title: "Salud Nutricional"
+    },
+]

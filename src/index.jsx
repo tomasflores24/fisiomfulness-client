@@ -4,6 +4,7 @@ import LayoutPublic from "./layout/LayoutPublic";
 
 import Home from "./pages/home/HomeContainer";
 import About from "./pages/about/AboutContainer";
+import Service from "./pages/service/ServiceContainer";
 import NotFound from "./pages/notfound/NotFoundContainer";
 
 export const router = createBrowserRouter([
@@ -22,6 +23,14 @@ export const router = createBrowserRouter([
                     {
                         path: "/quienes-somos",
                         element: <About />
+                    },
+                    {
+                        path: "/servicios",
+                        element: <Service />
+                    },
+                    {
+                        path: "/servicios/:tag",
+                        element: <Service />
                     },
                 ]
             }
