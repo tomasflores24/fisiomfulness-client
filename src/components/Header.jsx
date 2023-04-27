@@ -4,7 +4,7 @@ import { links } from "../data/dummy"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [ sticky, setSticky ] = useState(false);
+  const [sticky, setSticky] = useState(false);
 
   const handleClick = () => {
     setIsOpen(false);
@@ -15,7 +15,7 @@ const Header = () => {
   const handleToggle = () => {
     setIsOpen(!isOpen);
     document.body.classList.toggle("header-navbar", !isOpen);
-  };
+  }
 
   useEffect(() => {
     const handleScroll = () => {

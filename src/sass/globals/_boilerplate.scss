@@ -44,6 +44,19 @@ li {
     list-style: none;
 }
 
+select,
+textarea,
+input {
+    border-style: none;
+    background: none;
+    outline: none;
+    appearance: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
 // Visibility
 .hide-for-mobile {
     @include u.breakpoint-down(medium) {

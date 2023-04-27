@@ -13,7 +13,7 @@ const AboutContainer = () => {
 
         <div className="grid gap-5" style={{gridTemplateColumns: "repeat(auto-fill, minmax(275px, 1fr))"}}>
           <div className="overflow-hidden rounded-2xl">
-            <img src="https://i.pinimg.com/474x/f0/72/ac/f072acd25176518223a4a4bcd3d5e088--natural-waterfalls-beautiful-pictures.jpg" alt="" className="w-full h-full object-cover" />
+            <img src="/images/about-1.jpg" alt="" className="w-full h-full object-cover" />
           </div>
           
           <div className="overflow-hidden rounded-2xl">
