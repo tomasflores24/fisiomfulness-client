@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import Views from "../../components/Views"
+import Carrusel from "../../components/Carrusel"
 
 const HomeContainer = () => {
   useEffect(() => {
@@ -12,7 +13,9 @@ const HomeContainer = () => {
   
   return (
     <div className="page">
+      
       <section className="home">
+      <Carrusel />
         <div className="container">
           <h1 className="title">
             <span>

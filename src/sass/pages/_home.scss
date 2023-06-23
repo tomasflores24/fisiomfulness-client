@@ -134,4 +134,17 @@
             line-height: 34px;
         }
     }
+
+    .container_slider {
+        width: 250px;
+        padding-bottom: 2rem;
+        margin-left: auto;
+    }
+
+    .img_carrusel {
+        width: 250px;
+        height: 240px;
+        object-fit: cover;
+        object-position: center;
+    }
 }
