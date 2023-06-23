@@ -5,7 +5,6 @@
     min-height: calc(100vh - 64px);
     display: flex;
     flex-direction: column;
-    text-align: center;
 
     &::before {
         content: "";
@@ -21,6 +20,70 @@
     margin: auto;
     padding: 5rem 0;
 
+    .container {
+        border-left: 6px solid white;
+        border-right: 6px solid white;
+        border-bottom: 6px solid white;
+    }
+
+    .container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 43%;
+        height: 6px;
+        background-color: transparent;
+        border-top: 6px solid white;
+      }
+
+      .container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 43%;
+        height: 6px;
+        background-color: transparent;
+        border-top: 6px solid white;
+      }
+
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .logo-container img {
+        width: 96px;
+        height: auto
+    }
+
+    @media screen and (max-width: 768px){
+        .container::before {
+            width: 40%;
+        }
+
+        .container::after {
+            width: 40%;
+        }
+
+        .logo-container {
+            top: -25px;
+        }
+
+        .logo-container img {
+            width: 55px;
+            height: auto
+        }
+    }
+
     .title {
         @include l.flex-center;
         justify-content: center;
@@ -31,6 +94,7 @@
         line-height: 1;
         letter-spacing: -.06em;
         font-weight: 800;
+        padding-top: 60px;
 
         > span {
             position: relative;
@@ -116,11 +180,13 @@
     }
 
     .subtitle {
+        text-align: center;
         margin-top: 14px;
         font-size: 20px;
         line-height: 26px;
         color: #888;
         letter-spacing: -.03em;
+        padding-bottom: 60px;
     }
 
     @include u.breakpoint-up(large) {
