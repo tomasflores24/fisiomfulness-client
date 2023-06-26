@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import Views from "../../components/Views";
+import React, { useEffect, useRef, useState } from "react"
+import Views from "../../components/Views"
+import Carrusel from "../../components/Carrusel"
 import Appointment from "../appointment/Appointment";
 
 const HomeContainer = () => {
@@ -15,6 +16,7 @@ const HomeContainer = () => {
     <div className="page">
       <Appointment />
       <section className="home">
+      <Carrusel />
         <div className="container">
           <div className="logo-container">
             <img src="/icon-logo.png" alt="LOGO DE FISIONFULNESS" />
