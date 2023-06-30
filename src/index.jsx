@@ -9,6 +9,7 @@ import SaludMental from "./pages/service/SaludMentalContainer";
 import SaludFisica from "./pages/service/SaludFisicaContainer";
 import SaludNutricional from "./pages/service/SaludNutricionalContainer";
 import NotFound from "./pages/notfound/NotFoundContainer";
+import Login from './pages/login/LoginContainer';
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
                     {
                         path: "/servicios/salud-nutricional",
                         element: <SaludNutricional />
+                    },
+                    {
+                        path: "/login",
+                        element: <Login />
                     },
                 ]
             }

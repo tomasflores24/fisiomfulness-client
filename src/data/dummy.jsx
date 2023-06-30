@@ -1,4 +1,4 @@
-import { BiHomeAlt2, BiUser, BiBriefcaseAlt, BiCog, BiGridAlt } from 'react-icons/bi'
+import { BiHomeAlt2, BiUser, BiBriefcaseAlt, BiCog, BiGridAlt, BiLogIn } from 'react-icons/bi'
 
 export const links = [
     {
@@ -25,6 +25,12 @@ export const links = [
         to: '/blog',
         text: 'Blog',
         icon: <BiGridAlt />
+    },
+
+    {
+        to: '/login',
+        text: 'login',
+        icon: <BiLogIn />,
     },
 ]
 
